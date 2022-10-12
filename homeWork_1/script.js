@@ -36,7 +36,7 @@ function getStringFromObject (object = {}) {
 
         return str
     } else {
-        console.log('Значение не является объектом')
+        return 'Некорректные данные'
     }
 }
 
@@ -59,7 +59,7 @@ function getSumPeople (object = {}) {
 
         return `Студентов ${sumStudents}, Учителей ${sumTeacher}, Всего ${sumResult}`
     } else {
-        console.log('Значение не является объектом')
+        return 'Некорректные данные'
     }
 }
 
@@ -82,7 +82,7 @@ function getAverageStudents (object = {}) {
 
         return `Среднее значение студентов ${averageResult}`
     } else {
-        console.log('Значение не является объектом')
+        return 'Некорректные данные'
     }
 }
 
@@ -102,7 +102,7 @@ function transformObjectToArr (object = {}) {
 
         return newArr
     } else {
-        console.log('Значение не является объектом')
+        return 'Некорректные данные'
     }
 }
 
@@ -113,9 +113,14 @@ console.log(transformObjectToArr(subjects))
 function sortArr (object = {}) {
     let mutableArray = transformObjectToArr(object)
 
-    mutableArray.sort((a, b) => parseFloat(b.teachers) - parseFloat(a.teachers))
+    if (Array.isArray(mutableArray) == true ) {
+        mutableArray.sort((a, b) => parseFloat(b.teachers) - parseFloat(a.teachers))
 
-    return mutableArray
+        return mutableArray
+    } else {
+        return 'Некорректные данные'
+    }
+
 }
 
 console.log(sortArr(subjects))
