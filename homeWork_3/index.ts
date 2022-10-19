@@ -1,5 +1,5 @@
 // Task 1
-type Users = {
+type User = {
     name: string,
     phone: string,
     email: string,
@@ -37,7 +37,7 @@ const users = [
 ]
 
 // Task 2
-function getNameUsers (array: Users[]):string {
+function getNameUsers (array: User[]):string {
     const result = array.map((item) => item.name).join(',')
 
     return result
@@ -47,7 +47,7 @@ console.log(getNameUsers(users))
 
 
 // Task 3
-function getSumCarsUsers (array: Users[]):number {
+function getSumCarsUsers (array: User[]):number {
     const result = array.reduce((acc, item) => {
         if (item.cars !== undefined) {
             acc += item.cars.length
@@ -63,7 +63,7 @@ console.log(getSumCarsUsers(users))
 
 
 // Task 4
-function getUsersWithEducation (array: Users[]):Users[] {
+function getUsersWithEducation (array: User[]):User[] {
     const result = array.filter((item) => item.hasEducation === true)
 
     return result
@@ -73,7 +73,7 @@ console.log(getUsersWithEducation(users))
 
 
 // Task 5
-function getUsersWithAnimals (array: Users[]):Users[] {
+function getUsersWithAnimals (array: User[]):User[] {
     const result = array.filter((item) => item.animals !== undefined)
 
     return result
@@ -83,7 +83,7 @@ console.log(getUsersWithAnimals(users))
 
 
 // Task 6
-function getNameCars (array: Users[]):string {
+function getNameCars (array: User[]):string {
     const newArray = array.filter((item) => item.cars !== undefined)
     const result = newArray.map((item) => item.cars).join(',')
 
